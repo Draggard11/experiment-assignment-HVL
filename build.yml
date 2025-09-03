@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
       - name: Compile Gradle
         run: ./gradlew compileJava
 
