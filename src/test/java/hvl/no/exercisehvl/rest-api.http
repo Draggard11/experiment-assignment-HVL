@@ -1,0 +1,91 @@
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "username": "John",
+  "email": "d"
+}
+
+<> 2025-09-08T012144.201.txt
+<> 2025-09-08T011355.201.txt
+<> 2025-09-08T011227.201.txt
+<> 2025-09-08T011033.201.txt
+<> 2025-09-08T010537.201.txt
+<> 2025-09-08T010453.404.json
+<> 2025-09-08T010421.404.json
+<> 2025-09-08T010318.404.json
+<> 2025-09-08T010300.404.json
+
+###
+GET http://localhost:8080/users
+Accept: application/json
+
+<> 2025-09-08T012144.200.json
+<> 2025-09-08T011355.200.json
+<> 2025-09-08T011227.200.json
+<> 2025-09-08T011033.200.json
+<> 2025-09-08T010540.200.json
+<> 2025-09-08T010318-1.404.json
+<> 2025-09-08T010300-1.404.json
+
+###
+
+GET http://localhost:8080/polls
+Accept: application/json
+
+<> 2025-09-08T012144-1.200.json
+<> 2025-09-08T011356.200.json
+<> 2025-09-08T011227-1.200.json
+<> 2025-09-08T011034.200.json
+<> 2025-09-08T010318-2.404.json
+<> 2025-09-08T010300-2.404.json
+
+###
+
+POST http://localhost:8080/polls?username=John
+Content-Type: application/json
+
+{
+  "question": "What's your favorite programming language?",
+  "options": [
+    {"caption": "java"},
+    {"caption": "python"},
+    {"caption": "javascript"},
+    {"caption": "c#"}
+  ]
+}
+
+<> 2025-09-08T012144-1.201.txt
+<> 2025-09-08T011452.201.txt
+<> 2025-09-08T011356.201.txt
+<> 2025-09-08T011252.201.txt
+<> 2025-09-08T011227-1.201.txt
+<> 2025-09-08T010716.500.json
+<> 2025-09-08T010700.500.json
+<> 2025-09-08T010651.500.json
+<> 2025-09-08T010544.500.json
+<> 2025-09-08T010406.404.json
+<> 2025-09-08T010319.404.json
+<> 2025-09-08T010300-3.404.json
+
+###
+GET http://localhost:8080/polls
+Content-Type: application/json
+
+
+<> 2025-09-08T012147.500.json
+<> 2025-09-08T012144.500.json
+<> 2025-09-08T011447.500.json
+<> 2025-09-08T011406.500.json
+<> 2025-09-08T011356.500.json
+<> 2025-09-08T011255.200.json
+<> 2025-09-08T011247.200.json
+<> 2025-09-08T011227-2.200.json
+<> 2025-09-08T011048.200.json
+<> 2025-09-08T011034-1.200.json
+<> 2025-09-08T010359.404.json
+<> 2025-09-08T010330.404.json
+<> 2025-09-08T010319-1.404.json
+<> 2025-09-08T010301.404.json
+
+###
