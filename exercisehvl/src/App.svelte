@@ -1,47 +1,48 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+    let username = "";
+    let email = "";
+
+    function handleSubmit() {
+        if (!username || !email) {
+            alert("Please fill in both fields.");
+            return;
+        }
+        fetch("/users", {
+            method: "POST",
+            body: JSON.stringify({
+                username: username,
+                email: email
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then((response) => {
+            if (response.status === 201) {
+                alert("User information submitted successfully!");
+            } else {
+                alert("Failed to submit user information.");
+            }
+        }).catch((error) => {
+            console.error("Error:", error);
+            alert("An error occurred while submitting user information.");
+        });
+    }
 </script>
 
-<main>
-  <div>
-    <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+<div>
+    <div>
+        <label for="username">Username:</label>
+        <input id="username" type="text" bind:value={username} placeholder="Enter your username" />
+    </div>
 
-  <div class="card">
-    <Counter />
-  </div>
+    <div>
+        <label for="email">Email:</label>
+        <input id="email" type="email" bind:value={email} placeholder="Enter your email" />
+    </div>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
+    <button on:click={handleSubmit}>Submit</button>
 
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
-
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
+    <h2>Your Information</h2>
+    <p><strong>Username:</strong> {username}</p>
+    <p><strong>Email:</strong> {email}</p>
+</div>

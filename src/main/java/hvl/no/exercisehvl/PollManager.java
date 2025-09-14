@@ -1,12 +1,9 @@
 package hvl.no.exercisehvl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import hvl.no.exercisehvl.helpers.Poll;
 import hvl.no.exercisehvl.helpers.States;
 import hvl.no.exercisehvl.helpers.User;
-import org.springframework.context.annotation.Bean;
+import org.springframework.core.ReactiveAdapterRegistry;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
