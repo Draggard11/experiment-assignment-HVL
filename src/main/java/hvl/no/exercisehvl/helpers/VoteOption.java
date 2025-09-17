@@ -1,17 +1,22 @@
 package hvl.no.exercisehvl.helpers;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
+
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
+@Getter
 public class VoteOption {
-    @Getter
+    private String id;
+
     @Setter
-    @JsonProperty("caption")
     private String caption;
-    @Getter
     @Setter
-    @JsonProperty("votes")
     private int votes;
 
     public VoteOption() {

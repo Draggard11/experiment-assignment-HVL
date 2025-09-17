@@ -2,7 +2,7 @@ plugins {
 	java
 	id("org.springframework.boot") version "3.5.5"
 	id("io.spring.dependency-management") version "1.1.7"
-    id("io.freefair.lombok") version "8.14.2"
+    //id("io.freefair.lombok") version "8.14.2"
 }
 
 group = "hvl.no"
@@ -21,7 +21,10 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

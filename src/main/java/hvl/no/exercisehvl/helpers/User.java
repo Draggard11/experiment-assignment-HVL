@@ -1,27 +1,22 @@
 package hvl.no.exercisehvl.helpers;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.Setter;
 
 @JsonIdentityInfo(
-        generator = ObjectIdGenerators.UUIDGenerator.class,
+        generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id"
 )
+@Getter
 public class User {
-    @Getter
     private String id;
 
-    @Getter
     @Setter
-    @JsonProperty("username")
     private String username;
 
-    @Getter
     @Setter
-    @JsonProperty("email")
     private String email;
 
     public User() {
