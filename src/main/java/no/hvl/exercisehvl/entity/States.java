@@ -1,4 +1,4 @@
-package no.hvl.exercisehvl.helpers;
+package no.hvl.exercisehvl.entity;
 
 public enum States {
     Private, Public

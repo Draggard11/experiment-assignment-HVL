@@ -1,9 +1,9 @@
 package no.hvl.exercisehvl;
 
-import no.hvl.exercisehvl.helpers.Poll;
-import no.hvl.exercisehvl.helpers.User;
-import no.hvl.exercisehvl.helpers.Vote;
-import no.hvl.exercisehvl.helpers.VoteOption;
+import no.hvl.exercisehvl.entity.Poll;
+import no.hvl.exercisehvl.entity.User;
+import no.hvl.exercisehvl.entity.Vote;
+import no.hvl.exercisehvl.entity.VoteOption;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.PersistenceConfiguration;

@@ -1,4 +1,4 @@
-package no.hvl.exercisehvl.helpers;
+package no.hvl.exercisehvl.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

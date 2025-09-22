@@ -1,8 +1,8 @@
 package no.hvl.exercisehvl;
 
-import no.hvl.exercisehvl.helpers.Poll;
-import no.hvl.exercisehvl.helpers.States;
-import no.hvl.exercisehvl.helpers.User;
+import no.hvl.exercisehvl.entity.Poll;
+import no.hvl.exercisehvl.entity.States;
+import no.hvl.exercisehvl.entity.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

@@ -1,11 +1,11 @@
-package no.hvl.exercisehvl.helpers;
+package no.hvl.exercisehvl.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
@@ -22,6 +22,7 @@ public class User {
     @Setter
     private String email;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL)
     private Set<Poll> created;
 
