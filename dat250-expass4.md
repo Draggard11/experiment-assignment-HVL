@@ -16,6 +16,7 @@
 ## 3)
 # used the Persistence in intellij to inspect the database tables
 # had to create tables for users, polls, pollOptions and votes
+# got a lot of output when doing logging
 # ![](img.png)
 
 ## 4)

@@ -18,7 +18,6 @@ public class VoteOption {
     private String caption;
 
     @ManyToOne
-    @JoinColumn(name = "poll_id")
     private Poll poll;
 
     @OneToMany(mappedBy = "votesOn", cascade =  CascadeType.ALL)

@@ -57,6 +57,24 @@ public class PollsTest {
         emf.runInTransaction(em -> {
             populate(em);
         });
+        emf.runInTransaction(em -> {
+            System.out.println("Users:");
+            em.createQuery("from User", User.class).getResultList()
+                    .forEach(u -> System.out.println("username=" + u.getUsername() + ", email=" + u.getEmail() + "}"));
+            System.out.println("Polls:");
+            em.createQuery("from Poll", Poll.class).getResultList()
+                    .forEach(p -> System.out.println("question=" + p.getQuestion() + ", createdBy=" + p.getCreatedBy().getUsername() + "}"));
+
+            System.out.println("VoteOptions:");
+            em.createQuery("from VoteOption", VoteOption.class).getResultList()
+                    .forEach(o -> System.out.println("caption=" + o.getCaption() + ", poll=" + o.getPoll().getId() + "}"));
+
+            System.out.println("Votes:");
+            em.createQuery("from Vote", Vote.class).getResultList()
+                    .forEach(v -> System.out.println("user=" + v.getVoter().getUsername() + ", option=" + v.getVotesOn().getCaption() + "}"));
+        });
+
+
         this.emf = emf;
     }
 

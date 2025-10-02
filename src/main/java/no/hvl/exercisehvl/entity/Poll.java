@@ -17,7 +17,6 @@ public class Poll {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "creator_id")
     private User createdBy;
 
     @Setter

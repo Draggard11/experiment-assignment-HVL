@@ -10,10 +10,8 @@ public class Vote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "voter_id")
     private final User voter;
     @ManyToOne
-    @JoinColumn(name = "option_id")
     private final VoteOption votesOn;
 
     public Vote() {
