@@ -20,8 +20,11 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
+
+    implementation("redis.clients:jedis:6.2.0")
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.hibernate.orm:hibernate-core:7.1.1.Final")
