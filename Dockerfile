@@ -1,8 +1,5 @@
 # Do compilation inside a (throw-away) builder container
-FROM gradle AS builder
-
-# working directory inside the container is implicitly /home/gradle, but we make it explicit here
-WORKDIR /home/gradle
+FROM gradle as builder
 
 # copy only necessary source code files
 COPY settings.gradle.kts build.gradle.kts
@@ -16,7 +13,7 @@ RUN gradle clean
 RUN gradle bootJar
 
 # rename and move the resulting JAR file
-RUN mv build/libs/l15_containers-0.0.1-SNAPSHOT.jar app.jar
+RUN mv build/libs/ExerciseHVL-0.0.1-SNAPSHOT.jar app.jar
 
 
 # This will be the base image for the running application
