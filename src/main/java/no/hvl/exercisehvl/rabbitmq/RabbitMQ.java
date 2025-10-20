@@ -6,9 +6,6 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 import no.hvl.exercisehvl.PollManager;
 import no.hvl.exercisehvl.entity.Poll;
-import no.hvl.exercisehvl.entity.VoteOption;
-
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class RabbitMQ {
